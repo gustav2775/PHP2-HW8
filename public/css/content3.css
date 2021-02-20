@@ -1,0 +1,345 @@
+body {
+    margin  : 0 auto;
+    position: relative;
+    height  : 80vw;
+}
+
+.container {
+    padding: 20px;
+    margin : 20 auto;
+}
+
+.index,
+.catalogHeader {
+    text-align    : center;
+    padding-bottom: 20px;
+}
+
+/* авторизация */
+
+.authorization {
+    display        : flex;
+    justify-content: flex-end;
+    padding        : 15px 0;
+    font-size      : 16px;
+}
+
+.authorization a {
+    margin-right   : 15px;
+    text-decoration: none;
+    color          : black;
+}
+
+.auth {
+    margin : 0;
+    padding: 0 15px;
+}
+
+.regBtn {
+    margin-left    : 10px;
+    padding        : 0 5px;
+    text-decoration: none;
+    border         : 1px solid black;
+    color          : black;
+    border-radius  : 3px;
+}
+
+.formReg {
+    padding       : 15px 0;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+}
+
+.formReg input {
+    margin: 10px 0;
+    width : 200px;
+}
+
+/* Навигация */
+
+nav {
+    display        : flex;
+    justify-content: space-around;
+    height         : 70px;
+    background     : rgb(192, 188, 188);
+    border-radius  : 10px;
+    margin-bottom  : 50px;
+}
+
+nav .navBox {
+    list-style     : none;
+    display        : flex;
+    justify-content: space-around;
+    align-items    : center;
+    width: 400px;
+}
+
+nav a {
+    text-decoration: none;
+    color          : black;
+}
+
+nav a:hover {
+    color      : rgb(204, 80, 80);
+    font-weight: 700;
+}
+
+/* Галерея  */
+
+.formLoader {
+    margin-bottom: 50px;
+}
+
+.formLoader input {
+    margin-top: 15px;
+}
+
+.gallery {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    height        : 70vh;
+    background    : rgb(192, 188, 188);
+    border        : 1px solid black;
+    border-radius : 10px;
+}
+
+.gallerybox {
+    display        : flex;
+    justify-content: space-around;
+    align-items    : center;
+    flex-wrap      : wrap;
+    height         : 500px;
+}
+
+.image {
+    position: relative;
+    width   : 250px;
+    margin  : 20px;
+}
+
+.biglink {
+    position: absolute;
+}
+
+.delete {
+    position       : absolute;
+    text-decoration: none;
+    font-size      : 20px;
+    font-weight    : 700;
+    color          : red;
+    right          : 10px;
+    top            : 10px;
+}
+
+/* Развернутая картинка */
+
+.bigImg {
+    width: 100vw;
+}
+
+/* Каталог */
+.catalog {
+    display        : flex;
+    justify-content: space-evenly;
+    flex-wrap      : wrap;
+}
+
+.newProduct,
+.productUpdate {
+    height         : 125px;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-around;
+}
+
+.imgitem {
+    height: 250px;
+}
+
+.itemCatalog {
+    width: 250px;
+}
+
+.newProductInput {
+    width: 250px;
+}
+
+.newProductSubmit {
+    width: 100px;
+}
+
+/* Продукты */
+.productContainer {
+    display        : flex;
+    justify-content: space-evenly;
+}
+
+/* Корзина */
+
+.basketHeader,
+.basketFooter,
+.basketItem {
+    display        : flex;
+    padding        : 15px 0;
+    justify-content: center;
+}
+
+.newProductInput {
+    width: 250px;
+}
+
+.newProductSubmit {
+    width: 100px;
+}
+
+.basketFooter {
+    justify-content: center;
+}
+
+.imgBasket,
+.productName,
+.quantityBasket,
+.priceBasket,
+.deleteBasket {
+    width          : 150px;
+    padding        : 20px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.basketBtn {
+    text-decoration : none;
+    font-weight     : 900;
+    line-height     : 10px;
+    color           : black;
+    width           : 10px;
+    height          : 10px;
+    outline         : 1px solid black;
+    background-color: rgb(199, 199, 199);
+    margin          : 0 10px;
+}
+
+.btnOrder {
+    display        : flex;
+    justify-content: center;
+}
+
+
+
+/* Заказы */
+.orderAdm,
+.ordersHeader,
+.clearBasket {
+    display        : flex;
+    justify-content: space-around;
+}
+
+.itemsOrder {
+    display: flex;
+}
+
+.orderForm {
+    padding-top   : 15px;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+}
+
+.orderForm input {
+    margin: 10px 0;
+}
+
+.orders p,
+.deleteOrder {
+    width: 290px;
+}
+
+#status {
+    width: 209px;
+}
+
+.order {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+}
+
+.orderBox {
+    display        : flex;
+    justify-content: space-around;
+    margin-bottom  : 30px;
+}
+
+.orderItemOrder,
+.orderinf {
+    width: 50%;
+}
+
+/* Отзывы */
+
+.feedback,
+.feedbackForm {
+    display        : flex;
+    justify-content: space-around;
+}
+
+.feedbackForm {
+    display        : flex;
+    flex-direction : column;
+    justify-content: flex-start;
+    align-items    : center;
+}
+
+.feedbackForm input {
+    margin: 15px 0;
+}
+
+.feedbackForm .feedbacknameUser,
+textarea {
+    width: 360px;
+}
+
+.feedbackBoxItem {
+    border   : 1px solid rgb(197, 193, 193);
+    margin   : 15px 0;
+    min-width: 450px;
+}
+
+.feedbackBox p {
+    text-align: left;
+}
+
+.btnFeedbackBox {
+    display: flex;
+}
+
+.btnFeedbackBox input,
+.btnFeedbackForm,
+.dateFeedback {
+    background-color: rgb(197, 193, 193);
+}
+
+.btnFeedbackForm {
+    width: 150px;
+}
+
+.dateFeedback {
+    margin: 0;
+    height: 30px;
+}
+
+.btnFeedbackBoxEdit {
+    width : 50px;
+    margin: 0 20px 0 0;
+}
+
+.footer {
+    display    : flex;
+    align-items: center;
+    position   : absolute;
+    bottom     : 0px;
+    height     : 50px;
+}

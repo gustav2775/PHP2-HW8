@@ -1,0 +1,23 @@
+{% extends "layouts/index.twig" %}
+{% block login %}
+	<div class="authorization">
+		<a href="/orders">Заказы</a>
+		{% if auth | raw %}
+			<p class="auth">
+				{{user.login}}
+				<span>
+					<a href="auth/logout">Выход</a>
+				</span>
+			</p>
+		{% else %}
+			<form action="auth/login" method="post">
+				<input type="text" name="login"/>
+				<input type="text" name="pass"/>
+				Save?
+				<input type="checkbox" name="save"/>
+				<input type="submit" value="Войти"/>
+			</form>
+			<a href="registation" class="regBtn">Регистрация</a>
+		{% endif %}
+	</div>
+{% endblock %}

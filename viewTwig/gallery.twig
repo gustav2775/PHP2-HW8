@@ -1,0 +1,21 @@
+{% block content %}
+	<p>{{resultLoader}}</p>
+	<form class="formLoader" action="gallery/insert" method="post" enctype="multipart/form-data">
+		<input type="file" name="myfile">
+		<input type="submit" value="Загрузить">
+	</form>
+
+	<div class="gallery">
+		<h1>Галерея</h1>
+		<div class="gallerybox">
+			{% for item in gallery %}
+				<div class="image">
+					<a class="biglink" href="gallery/galleryItem/?id={{ item.id }} ">
+						<img class="" src="img/smallImg/{{ item.name }} " alt="{{item.name}}">
+					</a>
+					<a class="delete" href="gallery/galleryItem/?id={{ item.id }} ">x</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
