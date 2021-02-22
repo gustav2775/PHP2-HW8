@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Фев 20 2021 г., 14:56
+-- Время создания: Фев 23 2021 г., 00:00
 -- Версия сервера: 8.0.19
 -- Версия PHP: 7.4.14
 
@@ -40,7 +40,8 @@ CREATE TABLE `basket` (
 
 INSERT INTO `basket` (`id_product`, `id_session`, `quantity`, `id`) VALUES
 (2, 'ped82u7mpg7mhahv045p3956fbka54ch', 13, 152),
-(5, 'ped82u7mpg7mhahv045p3956fbka54ch', 1, 177);
+(5, 'ped82u7mpg7mhahv045p3956fbka54ch', 1, 177),
+(45, 'i1f61pvd5f869imeqoqvob71eq16967g', 18, 187);
 
 -- --------------------------------------------------------
 
@@ -65,22 +66,15 @@ INSERT INTO `catalog` (`id`, `name_product`, `price`, `img_prod`, `veiws`, `desc
 (1, 'Pizza', 50, '1.jpg', 206, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, dolorum.'),
 (2, 'Apple', 1, '2.jpg', 45, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, dolorum.'),
 (5, 'Tea', 7, '5.jpg', 97, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, dolorum.'),
-(7, 'Грибы', 30, '', 0, 'Лисички'),
-(13, 'Молоко', 50, '12.img', 0, 'Коровье'),
-(31, 'Торт', 45, NULL, 0, 'шоколадный'),
-(32, 'Цай', 25, NULL, 0, 'Цейлонский'),
-(41, 'Ананас', 250, NULL, 0, 'Вьетнамский'),
-(43, 'Банан', 49, NULL, 0, 'Индийский'),
-(44, 'Киви', 123, NULL, 0, 'Зеленый'),
-(45, 'Катофель', 20, NULL, 0, 'красный'),
-(51, 'Огурец', 40, NULL, 0, 'Тепличный'),
-(56, 'Арбуз', 40, NULL, 0, 'Астраханский'),
-(57, 'мороженое ', 40, NULL, 0, '48 копеек'),
-(58, 'Памела', 124, NULL, 0, 'врпилцу'),
-(59, 'Мандарин', 60, NULL, 0, 'Азербайджан'),
-(60, 'Салат', 70, NULL, 0, 'Айсберг'),
-(62, 'Миндаль', 250, NULL, 0, 'Центральная'),
-(118, 'Миндаль', 250, NULL, 0, 'Центральная');
+(7, 'Грибы', 30, 'boletus-badius31.jpg', 0, 'Лисички'),
+(44, 'Киви', 123, 'kartinki-kivi-15.jpg', 0, 'Зеленый'),
+(45, 'Катофель', 20, 'kartoshka-1.jpg', 0, 'красный'),
+(51, 'Огурец', 40, 'c3e4a3c7d3b4dba1d7288d221d37f9bd.jpg', 0, 'Тепличный'),
+(58, 'Памело', 124, 'tamozhennoe-oformlenie-pomelo-1.jpg', 0, 'врпилцу'),
+(118, 'Миндаль', 250, 'dry_roasted__75819.1347439726.1280.1280-2.jpg', 0, 'Центральная'),
+(122, 'Мандарины', 40, 'mandarin_02.jpg', 0, 'Астраханские'),
+(125, 'Молоко', 435, 'moloko.jpg', 0, 'Коровье'),
+(127, 'Арбуз', 250, '7d985897.jpg', 0, 'Астраханский');
 
 -- --------------------------------------------------------
 
@@ -105,7 +99,6 @@ INSERT INTO `feedback` (`idfeed`, `name`, `feedback`, `datefeedback`, `id`) VALU
 (5, 'Вася', 'Успехов в Новом Году!', ' 28 December 2020 02:04:46 AM', 0),
 (10, 'Коля', 'CRUD работает!', ' 28 December 2020 03:08:11 PM', 0),
 (25, 'NIKOLAI DAVYDOV', ' Вкусно', ' 16 January 2021 06:43:21 PM', 1),
-(29, 'Николай Давыдов', 'Не понял как заменить данные в input асинхронно. так чтобы, они оставались в нем. Но синхронно работает', ' 17 February 2021 12:12:26 AM', 0),
 (38, 'Малина', 'Свежая', ' 20 February 2021 12:22:57 AM', 1);
 
 -- --------------------------------------------------------
@@ -231,13 +224,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `basket`
 --
 ALTER TABLE `basket`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 
 --
 -- AUTO_INCREMENT для таблицы `catalog`
 --
 ALTER TABLE `catalog`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --
 -- AUTO_INCREMENT для таблицы `feedback`
