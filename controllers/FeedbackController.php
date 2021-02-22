@@ -15,7 +15,6 @@ class FeedbackController extends Controller
     public function actionFeedback()
     {
         $feedbackItem = App::call()->feedbackRepository->getAllWhere($this->id);
-        var_dump($this->id);
         echo $this->renderLayouts("feedback", [
             "feedback" => $feedbackItem
         ]);

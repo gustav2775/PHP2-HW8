@@ -1,89 +1,92 @@
 body {
-    margin  : 0 auto;
+    margin: 0 auto;
     position: relative;
-    height  : 80vw;
+    height: 80vw;
 }
 
 .container {
     padding: 20px;
-    margin : 20 auto;
+    margin: 20 auto;
 }
 
 .index,
 .catalogHeader {
-    text-align    : center;
+    text-align: center;
     padding-bottom: 20px;
 }
+
 
 /* авторизация */
 
 .authorization {
-    display        : flex;
+    display: flex;
     justify-content: flex-end;
-    padding        : 15px 0;
-    font-size      : 16px;
+    padding: 15px 0;
+    font-size: 16px;
 }
 
 .authorization a {
-    margin-right   : 15px;
+    margin-right: 15px;
     text-decoration: none;
-    color          : black;
+    color: black;
 }
 
 .auth {
-    margin : 0;
+    margin: 0;
     padding: 0 15px;
 }
 
 .regBtn {
-    margin-left    : 10px;
-    padding        : 0 5px;
+    margin-left: 10px;
+    padding: 0 5px;
     text-decoration: none;
-    border         : 1px solid black;
-    color          : black;
-    border-radius  : 3px;
+    border: 1px solid black;
+    color: black;
+    border-radius: 3px;
 }
 
 .formReg {
-    padding       : 15px 0;
-    display       : flex;
+    padding: 15px 0;
+    display: flex;
     flex-direction: column;
-    align-items   : center;
+    align-items: center;
 }
 
 .formReg input {
     margin: 10px 0;
-    width : 200px;
+    width: 200px;
 }
+
 
 /* Навигация */
 
 nav {
-    display        : flex;
+    display: flex;
     justify-content: space-around;
-    height         : 70px;
-    background     : rgb(192, 188, 188);
-    border-radius  : 10px;
-    margin-bottom  : 50px;
+    height: 70px;
+    background: rgb(192, 188, 188);
+    border-radius: 10px;
+    margin-bottom: 50px;
 }
 
 nav .navBox {
-    list-style     : none;
-    display        : flex;
+    list-style: none;
+    display: flex;
     justify-content: space-around;
-    align-items    : center;
+    align-items: center;
     width: 400px;
 }
 
 nav a {
     text-decoration: none;
-    color          : black;
+    color: black;
 }
 
 nav a:hover {
-    color      : rgb(204, 80, 80);
+    color: rgb(204, 80, 80);
     font-weight: 700;
 }
+
 
 /* Галерея  */
 
@@ -96,27 +99,27 @@ nav a:hover {
 }
 
 .gallery {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-    align-items   : center;
-    height        : 70vh;
-    background    : rgb(192, 188, 188);
-    border        : 1px solid black;
-    border-radius : 10px;
+    align-items: center;
+    height: 70vh;
+    background: rgb(192, 188, 188);
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .gallerybox {
-    display        : flex;
+    display: flex;
     justify-content: space-around;
-    align-items    : center;
-    flex-wrap      : wrap;
-    height         : 500px;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 500px;
 }
 
 .image {
     position: relative;
-    width   : 250px;
-    margin  : 20px;
+    width: 250px;
+    margin: 20px;
 }
 
 .biglink {
@@ -124,14 +127,15 @@ nav a:hover {
 }
 
 .delete {
-    position       : absolute;
+    position: absolute;
     text-decoration: none;
-    font-size      : 20px;
-    font-weight    : 700;
-    color          : red;
-    right          : 10px;
-    top            : 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: red;
+    right: 10px;
+    top: 10px;
 }
+
 
 /* Развернутая картинка */
 
@@ -139,19 +143,43 @@ nav a:hover {
     width: 100vw;
 }
 
+
 /* Каталог */
+
 .catalog {
-    display        : flex;
+    display: flex;
     justify-content: space-evenly;
-    flex-wrap      : wrap;
+    flex-wrap: wrap;
+}
+
+.button_delete {
+    width: 56px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
 }
 
 .newProduct,
 .productUpdate {
-    height         : 125px;
-    display        : flex;
-    flex-direction : column;
+    height: 125px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
+}
+
+.item {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .imgitem {
@@ -170,19 +198,54 @@ nav a:hover {
     width: 100px;
 }
 
+.pagination_box {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    width: 149px;
+    height: 21px;
+    border: 1px solid black;
+    border-radius: 3px;
+    text-align: center;
+    display: block;
+}
+
+
 /* Продукты */
-.productContainer {
-    display        : flex;
+
+.item_product {
+    display: flex;
     justify-content: space-evenly;
 }
+
+.product_buy {
+    border: 1px solid black;
+    border-radius: 3px;
+    display: block;
+    width: 84px;
+    height: 20px;
+    text-align: center;
+}
+
+.info_product,
+.update_product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
 
 /* Корзина */
 
 .basketHeader,
 .basketFooter,
 .basketItem {
-    display        : flex;
-    padding        : 15px 0;
+    display: flex;
+    padding: 15px 0;
     justify-content: center;
 }
 
@@ -203,37 +266,37 @@ nav a:hover {
 .quantityBasket,
 .priceBasket,
 .deleteBasket {
-    width          : 150px;
-    padding        : 20px;
-    display        : flex;
+    width: 150px;
+    padding: 20px;
+    display: flex;
     justify-content: center;
-    align-items    : center;
+    align-items: center;
 }
 
 .basketBtn {
-    text-decoration : none;
-    font-weight     : 900;
-    line-height     : 10px;
-    color           : black;
-    width           : 10px;
-    height          : 10px;
-    outline         : 1px solid black;
+    text-decoration: none;
+    font-weight: 900;
+    line-height: 10px;
+    color: black;
+    width: 10px;
+    height: 10px;
+    outline: 1px solid black;
     background-color: rgb(199, 199, 199);
-    margin          : 0 10px;
+    margin: 0 10px;
 }
 
 .btnOrder {
-    display        : flex;
+    display: flex;
     justify-content: center;
 }
 
 
-
 /* Заказы */
+
 .orderAdm,
 .ordersHeader,
 .clearBasket {
-    display        : flex;
+    display: flex;
     justify-content: space-around;
 }
 
@@ -242,10 +305,10 @@ nav a:hover {
 }
 
 .orderForm {
-    padding-top   : 15px;
-    display       : flex;
+    padding-top: 15px;
+    display: flex;
     flex-direction: column;
-    align-items   : center;
+    align-items: center;
 }
 
 .orderForm input {
@@ -262,15 +325,15 @@ nav a:hover {
 }
 
 .order {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-    align-items   : center;
+    align-items: center;
 }
 
 .orderBox {
-    display        : flex;
+    display: flex;
     justify-content: space-around;
-    margin-bottom  : 30px;
+    margin-bottom: 30px;
 }
 
 .orderItemOrder,
@@ -278,19 +341,20 @@ nav a:hover {
     width: 50%;
 }
 
+
 /* Отзывы */
 
 .feedback,
 .feedbackForm {
-    display        : flex;
+    display: flex;
     justify-content: space-around;
 }
 
 .feedbackForm {
-    display        : flex;
-    flex-direction : column;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items    : center;
+    align-items: center;
 }
 
 .feedbackForm input {
@@ -303,8 +367,8 @@ textarea {
 }
 
 .feedbackBoxItem {
-    border   : 1px solid rgb(197, 193, 193);
-    margin   : 15px 0;
+    border: 1px solid rgb(197, 193, 193);
+    margin: 15px 0;
     min-width: 450px;
 }
 
@@ -332,14 +396,14 @@ textarea {
 }
 
 .btnFeedbackBoxEdit {
-    width : 50px;
+    width: 50px;
     margin: 0 20px 0 0;
 }
 
 .footer {
-    display    : flex;
+    display: flex;
     align-items: center;
-    position   : absolute;
-    bottom     : 0px;
-    height     : 50px;
+    position: absolute;
+    bottom: 0px;
+    height: 50px;
 }

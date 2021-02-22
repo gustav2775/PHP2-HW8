@@ -22,7 +22,6 @@ class CatalogController extends Controller
     {
         $id = App::call()->request->getParams()['id'];
         $product = App::call()->catalogRepository->getProduct($id);
-
         echo $this->renderLayouts("product", [
             "item" => $product
         ]);
@@ -32,19 +31,24 @@ class CatalogController extends Controller
     {
         $paramsRequest = App::call()->request->getParams();
         $id = $paramsRequest['id'];
-
+        $file_name = App::call()->file->get_file_name();
         if (isset($id)) {
             $catalog = new Catalog();
-            $paramsKey = array_keys($paramsRequest);
-            foreach ($paramsKey as $key) {
-                $catalog->$key = $paramsRequest[$key];
+            foreach ($paramsRequest as $key => $value) {
+                if ($value != "") {
+                    $catalog->$key = $value;
+                }
+            }
+            if (!is_null($file_name)) {
+                $catalog->img_prod = $file_name;
             }
             App::call()->catalogRepository->update($catalog);
+            
         } else {
-            $catalog = new Catalog($paramsRequest['name_product'], $paramsRequest['price'], $paramsRequest['description']);
+            $catalog = new Catalog($paramsRequest['name_product'], $paramsRequest['price'], $paramsRequest['description'], $file_name);
             App::call()->catalogRepository->insert($catalog);
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
     public function actionBuy()
@@ -58,8 +62,11 @@ class CatalogController extends Controller
         } else {
             $basket = new Basket(session_id(), $id, 1);
             App::call()->basketRepository->insert($basket);
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
+        $response = [
+            'count' => App::call()->basketRepository->getCount()['count']
+        ];
+        echo json_encode($response, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     }
 
     public function actionDelete()
@@ -68,6 +75,10 @@ class CatalogController extends Controller
         $id = $requset['id'];
         $basket = App::call()->catalogRepository->getOne($id);
         $basket->delete();
+        $response = [
+            'count' => App::call()->basketRepository->getCount()['count']
+        ];
+        echo json_encode($response, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     }
 
     public function actionEdit()
@@ -78,7 +89,6 @@ class CatalogController extends Controller
         $product = App::call()->catalogRepository->getProduct($id);
 
         $feedbackUpdate =  App::call()->feedbackRepository->getOne($idfeed, 'idfeed');
-        var_dump($id);
         echo $this->renderLayouts("product", [
             "item" => $product,
             "feedbackUpdate" => $feedbackUpdate
@@ -104,7 +114,6 @@ class CatalogController extends Controller
 
             $updateFeedObj->id = $this->id;
             App::call()->feedbackRepository->updateFeed($updateFeedObj);
-
         } else {
 
             $feedback = new Feedback($this->id, $paramsRequest['name'], $paramsRequest['feedback'], $date);

@@ -2,7 +2,7 @@
 
 namespace app\engine;
 
-use app\engine\{DefaultRender, TwigRender,Request,Session,Storege};
+use app\engine\{DefaultRender, TwigRender,Request,Session,Storege,File};
 
 /**
  * Class App
@@ -61,7 +61,6 @@ class App
     {
         $this->config = $config;
         $this->components = new Storege;
-        // $this->session->sessionStart();
         $this->runController();
     }
 

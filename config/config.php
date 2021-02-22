@@ -1,7 +1,7 @@
 <?php
 
-use app\engine\{Request, Session, DefaultRender, Db, TwigRender};
-use app\model\repositories\{UsersRepository,CatalogRepository,FeedbackRepository,GalleryRepository,OrdersRepository,BasketRepository};
+use app\engine\{Request, Session, DefaultRender, Db, TwigRender,File};
+use app\model\repositories\{UsersRepository,CatalogRepository,FeedbackRepository,OrdersRepository,BasketRepository};
 
 return [
     'root_dir' => dirname(__DIR__),
@@ -11,7 +11,7 @@ return [
         'db' => [
             "class" => Db::class,
             "driver" => "mysql",
-            "host" => "localhost:",
+            "host" => "localhost",
             "dbname" => "hwphp",
             "port" => "3307",
             "login" => "phpHw",
@@ -45,6 +45,9 @@ return [
         ],
         'session' => [
             "class" => Session::class,
+        ],
+        'file' => [
+            "class" => File::class,
         ]
     ]
 ];

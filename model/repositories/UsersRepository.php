@@ -8,7 +8,6 @@ use app\engine\App;
 
 class UsersRepository extends Repository
 {
-
     public  function getTableName()
     {
         return 'users';
@@ -36,6 +35,7 @@ class UsersRepository extends Repository
 
     public function getLogin()
     {
+        
         return App::call()->session->getSession()['login'];
     }
 

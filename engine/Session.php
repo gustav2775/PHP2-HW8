@@ -12,7 +12,7 @@ class Session
         $this->Session();
     }
 
-    public function sessionStart()
+    public static function sessionStart()
     {
         session_start();
     }

@@ -22,6 +22,11 @@ class BasketController extends Controller
         $id = App::call()->request->getParams()['id'];
         $good = App::call()->basketRepository->getOne($id);
         $good->basketUp();
+        $response = [
+            'count' => App::call()->basketRepository->getCount()['count']
+
+        ];
+        echo json_encode($response, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     }
 
     public function actionDelete()
@@ -35,6 +40,9 @@ class BasketController extends Controller
         } else {
             $basket->basketRemove();
         }
+        $response = [
+            'count' => App::call()->basketRepository->getCount()['count']
+        ];
+        echo json_encode($response, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     }
-    
 }

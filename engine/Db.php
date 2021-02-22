@@ -32,7 +32,7 @@ class Db
     private function getDSNstr()
     {
         return sprintf(
-            "%s:host=%s%s;dbname=%s;charset=%s",
+            "%s:host=%s:%s;dbname=%s;charset=%s",
             $this->config['driver'],
             $this->config['host'],
             $this->config['port'],

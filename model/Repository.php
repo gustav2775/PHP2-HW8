@@ -79,7 +79,6 @@ abstract class Repository
     {
         $tableName = $this->getTableName();
         $params[':id'] = $model->id;
-
         foreach ($model->prop as $key => $value) {
             if ($value) {
                 if ($key != 'id') {

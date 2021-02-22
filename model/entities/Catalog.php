@@ -23,7 +23,7 @@ class Catalog extends Model
     ];
 
 
-    public function __construct($name_product = null, $price = null, $description = null)
+    public function __construct($name_product = null, $price = null, $description = null, $img_prod=null)
     {
         if (!is_null($name_product)) {
             $this->name_product = $name_product;
@@ -36,6 +36,10 @@ class Catalog extends Model
         if (!is_null($description)) {
             $this->description = $description;
             $this->prop['description'] = true;
+        }
+        if (!is_null($img_prod)) {
+            $this->img_prod = $img_prod;
+            $this->prop['img_prod'] = true;
         }
     }
 }
