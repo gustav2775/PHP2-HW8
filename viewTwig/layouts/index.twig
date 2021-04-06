@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+	{% block head %}
+		<link rel="stylesheet" href="/css/content3.css"/>
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+	{% endblock %}
+</head>
+<body>
+	<div class="container"> {% block login %}{% endblock %}{% block menu %}{% endblock %}{% block content %}{% endblock %}
+		</div>
+	</body>

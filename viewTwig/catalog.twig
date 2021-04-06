@@ -1,0 +1,36 @@
+{% block content %}
+
+	<div class="catalogHeader">
+		<h1>Каталог</h1>
+	</div>
+	{% if is_admin %}
+		<p>Создать новый товар</p>
+		<form class="newProduct" action="/catalog/save" method="post">
+			<input class="newProductInput" type="text" name='name' placeholder="Название товара">
+			<input class="newProductInput" type="text" name='price' placeholder="Цена">
+			<input class="newProductInput" type="text" name='description' placeholder="Описание">
+			<input type="file" name="productImg" id="">
+			<input class="newProductSubmit" type="submit" value="Создать">
+		</form>
+	{% endif %}
+
+	{% for item in catalog  %}
+		<div class="catalog">
+			<div class="item">
+				<a href="catalog/product/?id={{item.id}} ">
+					<div class="imgitem">
+						<img src="img/imgCatalog/{{item.img_prod}}" style="width: 250px;" alt="">
+					</div>
+					<p class="catalogItem">{{item.name_product}}</p>
+					<p>
+						Price :
+						<span>{{item.price}}USD</span>
+					</p>
+				</a>
+
+				<a href="/catalog/buy/?id={{item.id}}">Купить</a>
+			</div>
+		</div>
+	{% endfor %}
+	<a href="/catalog/?page={{page + 5}}">Показать еще 5</a>
+{% endblock %}

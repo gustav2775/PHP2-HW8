@@ -1,0 +1,43 @@
+ {% block content %}
+	{% if basket %}
+		<div class="basket">
+			<div class="basketHeader">
+				<div class="imgBasket"></div>
+				<div class="productName">Название товара</div>
+				<div class="quantityBasket">Колличество</div>
+				<div class="priceBasket">Цена товара</div>
+				<div class="deleteBasket"></div>
+			</div>
+
+			<div class="basketContent">
+				{% for product in basket %}
+					<div class="basketItem">
+						<img class="imgBasket" src="img/imgCatalog/{{product.img_prod}}" alt="{{product.img}}">
+						<div class="productName"> {{ product.name_product}} </div>
+						<div class="quantityBasket"> {{product.quantity}} </div>
+						<div class="priceBasket"> {{product.price}} </div>
+						<div class="deleteBasket">
+							<a href="/basket/buy/?id={{product.idprodbasket}}" class="basketBtn">+</a>
+							<a href="/basket/delete/?id={{product.idprodbasket}} " class="basketBtn">-</a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		{% else %}
+			<h2 class="clearBasket">Корзина пуста</h2>
+		{% endif %}
+
+		{% if basket %}
+		<div class="basketFooter">
+			<div class="sum">Сумма :
+				<span>{{ sumProduct }}</span>
+			</div>
+		</div>
+		<form class='btnOrder' action="/basket/createOrder/?idorder={{product.idprod}}" method="post">
+			<input hidden type="text" name="sumOrder" value="{{ sumProduct }}">
+			<input type="submit" value="Оформить заказ">
+		</form>
+		{% endif %}
+	</div>
+{% endblock %}
